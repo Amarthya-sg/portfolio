@@ -148,3 +148,6 @@ body > header { position: absolute; z-index: 80; top: 0; right: 0; left: 0; back
 
 /* Top-page label cleanup — keep the main page titles without the small section marker. */
 #work .sec-tag, #about .sec-tag, #experience .sec-tag, .contact-wrap .sec-tag { display: none !important; }
+
+/* Desktop accent initials — match the mobile visual hierarchy. */
+.sec-title::first-letter, .drop-cap-letter, .about-copy .drop-cap-letter { color: var(--accent); }

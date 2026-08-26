@@ -34,34 +34,27 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastProjectTick = 0;
 
   const primeAudio = () => {
-    if (reduceMotion || !AudioEngine) return Promise.resolve(false);
+    if (!AudioEngine) return false;
 
-    if (!audioContext) {
+    if (!audioContext || audioContext.state === 'closed') {
       try {
         audioContext = new AudioEngine();
       } catch {
-        return Promise.resolve(false);
+        return false;
       }
     }
 
-    if (audioContext.state === 'running') {
-      return Promise.resolve(true);
+    if (audioContext.state !== 'running' && !audioUnlock) {
+      audioUnlock = audioContext.resume().catch(() => {
+        audioUnlock = null;
+      });
     }
 
-    if (!audioUnlock) {
-      audioUnlock = audioContext.resume()
-        .then(() => audioContext.state === 'running')
-        .catch(() => {
-          audioUnlock = null;
-          return false;
-        });
-    }
-
-    return audioUnlock;
+    return true;
   };
 
   const playTone = (frequency, duration, volume, type = 'sine') => {
-    if (!audioContext || audioContext.state !== 'running') return;
+    if (!audioContext || audioContext.state === 'closed') return;
 
     const start = audioContext.currentTime;
     const oscillator = audioContext.createOscillator();
@@ -78,9 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const playClick = () => {
-    void primeAudio().then((ready) => {
-      if (ready) playTone(240, .075, .11, 'triangle');
-    });
+    if (primeAudio()) playTone(240, .075, .11, 'triangle');
   };
 
   const playLetterTick = (index) => {
@@ -96,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '.navlinks a, .contact-links a, .bottom-nav-card, .menu-btn'
     );
 
+    primeAudio();
     if (trigger) playClick();
   }, { capture: true, passive: true });
 
