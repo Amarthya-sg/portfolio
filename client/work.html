@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- Systems Field Manual — work page keeps a logo-free, text-only desktop pill navigation. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Work — Amarthya</title><link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:title" content="Amarthya — Selected Work">
+  <meta property="og:description" content="Selected AI, machine learning, blockchain, and systems projects by Amarthya S. George.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="/work.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&family=League+Gothic&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/desktop.css" media="screen and (min-width: 901px)">
+  <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 900px)">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header><nav aria-label="Primary"><div class="navlinks pill-nav-links"><a href="index.html"><span class="pill-label-stack"><span class="pill-label">Home</span><span class="pill-label-hover" aria-hidden="true">Home</span></span></a><a href="work.html" class="active"><span class="pill-label-stack"><span class="pill-label">Work</span><span class="pill-label-hover" aria-hidden="true">Work</span></span></a><a href="about.html"><span class="pill-label-stack"><span class="pill-label">About</span><span class="pill-label-hover" aria-hidden="true">About</span></span></a><a href="experience.html"><span class="pill-label-stack"><span class="pill-label">Experience</span><span class="pill-label-hover" aria-hidden="true">Experience</span></span></a><a href="contact.html"><span class="pill-label-stack"><span class="pill-label">Contact</span><span class="pill-label-hover" aria-hidden="true">Contact</span></span></a><div class="nav-footer"><a href="https://github.com/Amarthya-sg" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://linkedin.com/in/amarthya-sg" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="mailto:amarthyasgeorge@gmail.com">Email</a></div></div><button class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false"><span class="menu-line line-top"></span><span class="menu-line line-mid"></span><span class="menu-line line-bot"></span></button></nav></header>
+  <main>
+    <section id="work">
+      <div class="sec-head">
+        <div><div class="sec-tag">Selected work</div><h1 class="sec-title reveal stamp-reveal">Systems I've built<br>and shipped.</h1></div>
+        <p class="sec-desc">A working set — production pipelines, ML systems, and blockchain/security experiments.</p>
+      </div>
+      <div class="work-list">
+        <article class="work-item reveal">
+          <div class="work-idx">01</div>
+          <div class="work-name">Med-Chain<span>Decentralized medical records platform</span></div>
+          <div class="work-desc">A blockchain-based medical records system storing files on IPFS with metadata anchored on Ethereum. Three Solidity smart contracts handle patient records, doctor access control, and an immutable audit trail — with on-chain grant/revoke permissions and no central point of failure.</div>
+          <div class="work-actions"><div class="work-tags"><span>Solidity</span><span>React</span><span>IPFS</span></div><a class="project-github" href="https://github.com/Amarthya-sg/Med-Chain" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+        </article>
+        <article class="work-item reveal">
+          <div class="work-idx">02</div>
+          <div class="work-name">Among Us for Agents<span>Multi-agent murder mystery game</span></div>
+          <div class="work-desc">A six-character multi-agent game built on Google's Agent Development Kit, where LLM-powered characters investigate, lie, and vote each other out — with a live SSE frontend and per-character API key isolation.</div>
+          <div class="work-actions"><div class="work-tags"><span>Google ADK</span><span>multi-agent</span><span>Python</span></div><a class="project-github" href="https://github.com/Amarthya-sg/AMONG-US-FOR-AGENTS" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+        </article>
+        <article class="work-item reveal">
+          <div class="work-idx">03</div>
+          <div class="work-name">MPVG<span>Android media player fork</span></div>
+          <div class="work-desc">A personal fork of the libmpv-based Android video player MpvRx — adding a native bridge for live battery data in Lua OSD scripts, plus the full inherited feature set: shader-based HDR pipeline, AI-assisted subtitle translation, and thermal-aware quality throttling.</div>
+          <div class="work-actions"><div class="work-tags"><span>Kotlin</span><span>libmpv</span><span>Android</span></div><a class="project-github" href="https://github.com/Amarthya-sg/MPVG" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+        </article>
+        <article class="work-item reveal">
+          <div class="work-idx">04</div>
+          <div class="work-name">IntruSim<span>Network intrusion detection system</span></div>
+          <div class="work-desc">A network intrusion detection system using Random Forest and CNN models trained on CIC-IDS2017, detecting 12+ attack types through a live Flask dashboard with real-time simulation and model comparison.</div>
+          <div class="work-actions"><div class="work-tags"><span>Python</span><span>TensorFlow</span><span>scikit-learn</span></div><a class="project-github" href="https://github.com/Amarthya-sg/IntruSim-Network-Intrusion-Simulation-Detection" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+        </article>
+        <article class="work-item reveal">
+          <div class="work-idx">05</div>
+          <div class="work-name">Traffic Insight Engine<span>Attention-based traffic classifier</span></div>
+          <div class="work-desc">A research recreation of an attention-based autoencoder for network traffic classification — a supervised autoencoder with multi-head attention, trained on the ISCX VPN-nonVPN dataset, served through a live Flask dashboard with an honest, detailed comparison against the original paper.</div>
+          <div class="work-actions"><div class="work-tags"><span>PyTorch</span><span>Flask</span><span>deep learning</span></div><a class="project-github" href="https://github.com/Amarthya-sg/Traffic-Insight-Engine" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="mobile-only-element"><span>© 2026 Amarthya S. George</span><span>Mangaluru, IN</span></footer>
+</body>
+</html>
