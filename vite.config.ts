@@ -215,6 +215,7 @@ function vitePluginCopyStaticScripts(): Plugin {
 const plugins = [vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginCopyStaticScripts()];
 
 export default defineConfig({
+  base: "./",
   plugins,
   resolve: {
     alias: {
