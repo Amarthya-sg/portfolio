@@ -1,18 +1,18 @@
 /* Systems Field Manual — shared tokens, reset, structural rules, motion, and muted-red signal language. */
 :root {
-  --ink: #0A0A0A;
-  --paper: #FAFAF7;
-  --paper-alt: #F1F0EB;
-  --paper-warm: #F3E8DB;
-  --paper-blush: #EEDCD8;
-  --sage-wash: #DDE8DF;
-  --muted: #525252;
-  --muted-2: #8A8A85;
-  --body-text: #262626;
-  --border: #0A0A0A;
-  --border-hairline: #E4E4E0;
-  --border-soft: #D8D8D2;
-  --accent: #E34B25;
+  --ink: #12182B;
+  --paper: #F1EEE5;
+  --paper-alt: #F1EEE5;
+  --paper-warm: #F1EEE5;
+  --paper-blush: #F1EEE5;
+  --sage-wash: #F1EEE5;
+  --muted: #C7C2B4;
+  --muted-2: #C7C2B4;
+  --body-text: #12182B;
+  --border: #12182B;
+  --border-hairline: #C7C2B4;
+  --border-soft: #C7C2B4;
+  --accent: #E0A527;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --space-4: 16px;
   --space-5: 24px;
@@ -50,7 +50,7 @@ section { width: 100%; }.sec-tag, .eyebrow { color: var(--muted); font-family: "
 .reveal, .motion-ready .reveal, .motion-ready .reveal.in-view, .motion-ready .reveal.stamp-reveal, .motion-ready .reveal.stamp-reveal.in-view, .motion-ready .reveal.focus-pull, .motion-ready .reveal.focus-pull.in-view { opacity: 1; filter: none; transform: none; }
 
 .custom-cursor { display: none; }
-@media (pointer: fine) { .custom-cursor { position: fixed; top: -16px; left: -16px; z-index: 9999; display: block; width: 32px; height: 32px; border: 1px solid var(--ink); border-radius: 50%; pointer-events: none; opacity: 0; transition: width .25s var(--ease), height .25s var(--ease), top .25s var(--ease), left .25s var(--ease), background .25s ease, opacity .2s ease; }.custom-cursor.hover { top: -28px; left: -28px; width: 56px; height: 56px; background: rgba(10,10,10,.04); } }
+@media (pointer: fine) { .custom-cursor { position: fixed; top: -16px; left: -16px; z-index: 9999; display: block; width: 32px; height: 32px; border: 1px solid var(--ink); border-radius: 50%; pointer-events: none; opacity: 0; transition: width .25s var(--ease), height .25s var(--ease), top .25s var(--ease), left .25s var(--ease), background .25s ease, opacity .2s ease; }.custom-cursor.hover { top: -28px; left: -28px; width: 56px; height: 56px; background: rgba(18,24,43,.04); } }
 @view-transition { navigation: auto; }
 @keyframes pressFlash { 0% { opacity: .4; filter: contrast(1.8) brightness(1.3); } 20% { opacity: .95; filter: contrast(1.25) brightness(1.1); } 100% { opacity: 1; filter: contrast(1) brightness(1); } }
 @keyframes navLinkFade { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
