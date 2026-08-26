@@ -29,33 +29,73 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Systems Field Manual — unobtrusive synthesized interface sounds; no audio assets are loaded. */
   const AudioEngine = window.AudioContext || window.webkitAudioContext;
   let audioContext = null;
+  let audioUnlock = null;
   let lastLetterTick = 0;
   let lastProjectTick = 0;
+
   const primeAudio = () => {
-    if (reduceMotion || !AudioEngine) return false;
-    if (!audioContext) audioContext = new AudioEngine();
-    if (audioContext.state === 'suspended') audioContext.resume().catch(() => {});
-    return true;
+    if (reduceMotion || !AudioEngine) return Promise.resolve(false);
+
+    if (!audioContext) {
+      try {
+        audioContext = new AudioEngine();
+      } catch {
+        return Promise.resolve(false);
+      }
+    }
+
+    if (audioContext.state === 'running') {
+      return Promise.resolve(true);
+    }
+
+    if (!audioUnlock) {
+      audioUnlock = audioContext.resume()
+        .then(() => audioContext.state === 'running')
+        .catch(() => {
+          audioUnlock = null;
+          return false;
+        });
+    }
+
+    return audioUnlock;
   };
+
   const playTone = (frequency, duration, volume, type = 'sine') => {
-    if (!audioContext) return;
+    if (!audioContext || audioContext.state !== 'running') return;
+
     const start = audioContext.currentTime;
     const oscillator = audioContext.createOscillator();
     const gain = audioContext.createGain();
+
     oscillator.type = type;
     oscillator.frequency.setValueAtTime(frequency, start);
     gain.gain.setValueAtTime(volume, start);
     gain.gain.exponentialRampToValueAtTime(.0001, start + duration);
+
     oscillator.connect(gain).connect(audioContext.destination);
     oscillator.start(start);
     oscillator.stop(start + duration);
   };
-  const playClick = () => playTone(240, .075, .11, 'triangle');
-  const playLetterTick = (index) => playTone(420 + (index % 6) * 28, .04, .05, 'sine');
-  const playProjectTick = (index) => playTone(332 + (index % 5) * 24, .045, .048, 'triangle');
+
+  const playClick = () => {
+    void primeAudio().then((ready) => {
+      if (ready) playTone(240, .075, .11, 'triangle');
+    });
+  };
+
+  const playLetterTick = (index) => {
+    playTone(420 + (index % 6) * 28, .04, .05, 'sine');
+  };
+
+  const playProjectTick = (index) => {
+    playTone(332 + (index % 5) * 24, .045, .048, 'triangle');
+  };
+
   document.addEventListener('pointerdown', (event) => {
-    if (!primeAudio()) return;
-    const trigger = event.target.closest('.navlinks a, .contact-links a, .bottom-nav-card, .menu-btn');
+    const trigger = event.target.closest(
+      '.navlinks a, .contact-links a, .bottom-nav-card, .menu-btn'
+    );
+
     if (trigger) playClick();
   }, { capture: true, passive: true });
 
@@ -106,9 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const now = performance.now();
         if (now - lastProjectTick < 72) return;
         lastProjectTick = now;
-        if (primeAudio()) playProjectTick(index);
+        if (audioContext?.state === 'running') playProjectTick(index);
       });
-      project.addEventListener('pointerdown', () => { if (primeAudio()) playClick(); });
+      project.addEventListener('pointerdown', playClick);
     });
   }
 
@@ -130,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const now = performance.now();
         if (now - lastLetterTick < 46) return;
         lastLetterTick = now;
-        if (primeAudio()) playLetterTick(index);
+        if (audioContext?.state === 'running') playLetterTick(index);
       });
     });
     let requested = false;
