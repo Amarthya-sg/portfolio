@@ -1,14 +1,14 @@
 /* Systems Field Manual — shared tokens, reset, structural rules, motion, and muted-red signal language. */
 :root {
-  --ink: #12182B;
+  --ink: #000000;
   --paper: #F1EEE5;
   --paper-alt: #F1EEE5;
   --paper-warm: #F1EEE5;
   --paper-blush: #F1EEE5;
   --sage-wash: #F1EEE5;
-  --muted: #C7C2B4;
-  --muted-2: #C7C2B4;
-  --body-text: #12182B;
+  --muted: #000000;
+  --muted-2: #000000;
+  --body-text: #000000;
   --border: #12182B;
   --border-hairline: #C7C2B4;
   --border-soft: #C7C2B4;

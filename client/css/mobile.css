@@ -102,3 +102,15 @@ header nav::before, header nav::after, .menu-btn::before { display: none; conten
 
 /* Mobile menu cleanup — route navigation stands alone without social footer links. */
 .navlinks .nav-footer { display: none; }
+
+/* About stack headings — bold, dark labels for clear category hierarchy. */
+.stack-row .name, .stack-row:first-child .name { color: var(--ink); font-weight: 700; }
+
+/* Readable supporting copy — use a clean, open sans-serif for smaller descriptive text. */
+.sec-desc, .work-desc, .about-copy p, .exp-list li, .stack-row .items, .bio-detail, .contact-link-pending small { font-family: "Inter", sans-serif; font-weight: 400; }
+
+/* Home tagline — soften the black display text with a muted warm gray. */
+.home-page .receding-plane-text { color: #6A665E; }
+
+/* Top-page label cleanup — keep the main page titles without the small section marker. */
+#work .sec-tag, #about .sec-tag, #experience .sec-tag, .contact-wrap .sec-tag { display: none !important; }
