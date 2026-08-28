@@ -3,3 +3,4 @@ Allow: /
 
 # AI-readable site description
 # See /llm.txt for a concise description of this portfolio and its public pages.
+Sitemap: https://amarthya.vercel.app/sitemap.xml
