@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# AI-readable site description
+# See /llm.txt for a concise description of this portfolio and its public pages.

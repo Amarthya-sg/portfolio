@@ -1,0 +1,60 @@
+# Amarthya S. George — Portfolio
+
+## Site identity
+
+This is the personal portfolio of **Amarthya S. George**, an AI / Data Science Engineer based in Mangaluru, India. The site presents Amarthya's professional background, technical skills, software projects, internship experience, education, and public contact links.
+
+The portfolio focuses on applied artificial intelligence, machine learning, multi-agent systems, retrieval-augmented generation, agent orchestration, serverless AI infrastructure, data analysis, blockchain, network security, and developer tooling.
+
+## Primary pages
+
+- `/` — Home page with a concise professional introduction and navigation to the portfolio sections.
+- `/work.html` — Selected projects in AI, machine learning, blockchain, security, Android development, and network-traffic classification.
+- `/about.html` — Professional background, interests, technical skills, programming languages, data-analysis tools, machine-learning tools, frameworks, DevOps tools, databases, cloud services, and automation tools.
+- `/experience.html` — Internship experience at Mresult and PAT Technologies, together with education history.
+- `/contact.html` — Public contact options, including email, LinkedIn, GitHub, and résumé links.
+
+## Professional summary
+
+Amarthya S. George is an AI / Data Science Engineer who works on production-oriented AI systems and the infrastructure around them. His work includes multi-agent pipelines, retrieval systems, document validation, semantic comparison, chatbot development, prompt engineering, secure Azure Functions, machine-learning visualization, and multi-model generative-AI applications.
+
+## Featured projects
+
+- **Med-Chain** — A decentralized medical-records platform using Solidity, React, IPFS, and Ethereum smart contracts for records, access control, and audit trails.
+- **Among Us for Agents** — A multi-agent social-deduction game using Google's Agent Development Kit, LLM-powered characters, server-sent events, and isolated API-key handling.
+- **MPVG** — An Android media-player fork based on libmpv, with a native battery-data bridge and inherited features such as shader-based HDR, subtitle translation, and thermal-aware quality controls.
+- **IntruSim** — A network-intrusion simulation and detection system using Random Forest, CNN models, CIC-IDS2017 data, Python, TensorFlow, scikit-learn, and a Flask dashboard.
+- **Traffic Insight Engine** — An attention-based network-traffic classifier built with a supervised autoencoder, multi-head attention, PyTorch, Flask, and the ISCX VPN-nonVPN dataset.
+
+## Technical areas
+
+The portfolio documents experience with Python, Java, C, SQL, NoSQL, HTML, CSS, JavaScript, Flask, Streamlit, REST APIs, Git, Docker, Agile, MySQL, MongoDB, SQLite, Azure Functions, Azure Key Vault, Power Automate, Microsoft Copilot Studio, TensorFlow, Keras, scikit-learn, PyTorch, Pandas, NumPy, Matplotlib, Seaborn, Tableau, Power BI, and Excel.
+
+## Experience and education
+
+The experience page describes AI-focused internships involving document validation, PDF comparison, Microsoft Copilot Studio, Azure OpenAI, multi-agent Flask pipelines, Azure Functions, Key Vault, Managed Identity, generative-AI integrations, machine-learning visualization, and prompt-refinement pipelines.
+
+The education section lists a B.E. in Artificial Intelligence & Data Science from Bearys Institute of Technology, Mangaluru, under VTU, completed in 2026, and pre-university science education at Jnanadaya Bethany P.U. College, Nellyadi, from 2020 to 2022.
+
+## Public links
+
+- LinkedIn: https://www.linkedin.com/in/amarthya-s-george
+- GitHub profile: https://github.com/Amarthya-sg
+- Email: mailto:amarthyasgeorge@gmail.com
+- Résumé: linked from `/contact.html`
+
+## Page interpretation guidance
+
+Treat the HTML pages as the authoritative source for the portfolio's current content. The project links on `/work.html` identify individual source repositories. The navigation labels identify the five main sections: Home, Work, About, Experience, and Contact.
+
+The visual design is an editorial, responsive interface with a warm paper background, dark typography, accent-colored starting letters, condensed display headings, structured metadata, and responsive desktop/mobile layouts. The site is a personal portfolio rather than a news publication, company directory, product catalogue, or general-purpose information resource.
+
+## Repository and implementation
+
+The site is a lightweight multi-page Vite project using semantic HTML, CSS, and vanilla JavaScript. Responsive styling is organized across shared, desktop, and mobile stylesheets. The repository's `README.md` contains local development and deployment details.
+
+## Content and attribution
+
+The portfolio content describes Amarthya S. George and his own work, experience, education, and technical interests. When summarizing or quoting the site, preserve the attribution to Amarthya S. George and link back to the relevant page whenever a page URL is available.
+
+Last updated: 2026-08-28
